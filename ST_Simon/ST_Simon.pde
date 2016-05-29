@@ -7,6 +7,7 @@ int[] sequence = new int[4];
 
 void setup() {
   size(1000, 1000);
+  background(255);
 
   // Initialize the position
   sequence[0] = RED;
@@ -51,7 +52,7 @@ void draw() {
     currentSquare +=1;
   }
   //clears everthing after they fill 1 by 1 
-  if (currentSquare==5) {
+  if (currentSquare==4) {
   fill(255);
   strokeWeight(5);
   //red rect
@@ -66,5 +67,9 @@ void draw() {
   //green rect
   stroke(#2A7904);
   rect(725, 200, 200, 200);
+  }
+  
+  void mouseClicked(){
+    if (mouseX > 50 && mouseX < 250 && mouse
   }
 }
