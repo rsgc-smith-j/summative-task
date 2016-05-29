@@ -2,6 +2,7 @@ static final int RED = 1;
 static final int BLUE = 2;
 static final int YELLOW = 3;
 static final int GREEN = 4;
+int score = 0;
 int currentSquare = 0; 
 int[] sequence = new int[4];
 
@@ -35,7 +36,7 @@ void draw() {
   rect(725, 200, 200, 200);
 
 
-  if (frameCount%60 == 0 && frameCount >0) {
+  if (frameCount%60 == 0 && frameCount >0 && currentSquare<=4) {
     if (sequence[currentSquare]==RED) {
       fill(#FF0505);
       rect(50, 200, 200, 200);
@@ -53,23 +54,37 @@ void draw() {
   }
   //clears everthing after they fill 1 by 1 
   if (currentSquare==4) {
-  fill(255);
-  strokeWeight(5);
-  //red rect
-  stroke(#FF0505);
-  rect(50, 200, 200, 200); 
-  //bluerect
-  stroke(#0805FF);
-  rect(275, 200, 200, 200); 
-  //yellow rect
-  stroke(#EEFF05);
-  rect(500, 200, 200, 200); 
-  //green rect
-  stroke(#2A7904);
-  rect(725, 200, 200, 200);
+    fill(255);
+    strokeWeight(5);
+    //red rect
+    stroke(#FF0505);
+    rect(50, 200, 200, 200); 
+    //bluerect
+    stroke(#0805FF);
+    rect(275, 200, 200, 200); 
+    //yellow rect
+    stroke(#EEFF05);
+    rect(500, 200, 200, 200); 
+    //green rect
+    stroke(#2A7904);
+    rect(725, 200, 200, 200);
   }
-  
-  void mouseClicked(){
-    if (mouseX > 50 && mouseX < 250 && mouse
+
+  if (score==3) {
+    fill(0);
+    rect(0,0,1000,1000);
+  }
+}
+
+void mouseClicked() {
+  if (mouseX > 50 && mouseX < 250 && mouseY > 200 && mouseY < 400) {
+    score +=1;
+  }
+  if (mouseX > 275 && mouseX < 475 && mouseY > 200 && mouseY < 400) {
+    score +=1;
+  }
+ 
+  if (mouseX > 725 && mouseX < 925 && mouseY > 200 && mouseY < 400) {
+    score +=1;
   }
 }
