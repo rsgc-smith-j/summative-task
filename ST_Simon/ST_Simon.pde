@@ -48,10 +48,23 @@ void draw() {
       fill(#EEFF05);
       rect(500, 200, 200, 200);
     }
-if(currentSquare > 4){
-
-}
-
     currentSquare +=1;
+  }
+  //clears everthing after they fill 1 by 1 
+  if (currentSquare==5) {
+  fill(255);
+  strokeWeight(5);
+  //red rect
+  stroke(#FF0505);
+  rect(50, 200, 200, 200); 
+  //bluerect
+  stroke(#0805FF);
+  rect(275, 200, 200, 200); 
+  //yellow rect
+  stroke(#EEFF05);
+  rect(500, 200, 200, 200); 
+  //green rect
+  stroke(#2A7904);
+  rect(725, 200, 200, 200);
   }
 }
